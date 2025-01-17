@@ -1,0 +1,35 @@
+<body>
+    <div class="container mt-3">
+
+        <header>
+            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom border-5">
+                <a routerLink="" routerLinkActive="active" class="d-flex align-items-center text-dark text-decoration-none">
+                   <span >Home</span>
+                </a>
+
+                <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                    
+                </nav>
+
+                <div>
+                    <button type="button" class="btn btn-info btn-rounded me-2" routerLink="doctor/doclogin" >Are you a doctor?</button>
+                </div>
+                <div class="text-end ">
+                    <button *ngIf="!auth.isLoggedIn()" type="button" class="btn btn-primary btn-rounded me-2" routerLink="login" >Login</button>
+                    <button *ngIf="!auth.isLoggedIn()" type="button" class="btn btn-warning btn-rounded " routerLink="register" >Register</button>
+                    <button *ngIf="auth.isLoggedIn()" type="button" class="btn btn-danger btn-rounded" (click)="auth.logout()">Logout</button>
+                </div>
+
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <router-outlet></router-outlet>
+            </div>
+        </main>
+
+      
+    </div>
+
+</body>
