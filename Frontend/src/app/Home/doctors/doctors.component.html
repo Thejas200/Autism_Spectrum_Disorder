@@ -1,0 +1,27 @@
+
+    <div class="row row-cols-1 row-cols-md-3 mb-3 g-4">
+        <div *ngFor="let doctor of doctors" class="col">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Dr. {{doctor.name}}</h4>
+                    <p class="card-text mb-1">
+                        <small class="text-muted">Designation: {{doctor.designation}}</small>
+                    </p>
+                    <span class="card-text mt-1 mb-1">
+                        <small class="text-muted">Qualifications: {{doctor.qualification}} </small>
+                    </span>
+        
+                    <p class="card-text mt-1 mb-1">
+                        <small class="text-muted">Experience: {{doctor.experience}} Years</small>
+                    <p class="card-text mt-1 mb-1">
+                        <small class="text-muted">Email: {{doctor.email}}</small>
+                    </p>
+                    <p class="card-text mt-1 mb-2">
+                        <small class="text-muted">Contact: {{doctor.contact}}</small>
+                    </p>
+        
+                    <button type="button" class="btn btn-danger float-end" (click)="addPatient(doctor.email)"><i class="fas fa-clinic-medical me-2"></i> Consult</button>
+                </div>
+            </div>
+        </div>
+    </div>
